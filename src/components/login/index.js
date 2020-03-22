@@ -3,10 +3,14 @@ import "../../assets/css/components/login.css";
 import { Input, Form, Checkbox, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 class LoginComponent extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     const onFinish = values => {
-      console.log("Received values of form: ", values);
+      this.props.setLoggedStatus(true);
     };
+
     return (
       <div>
         <div className="main-box">

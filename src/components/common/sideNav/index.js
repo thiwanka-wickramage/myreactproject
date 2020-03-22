@@ -23,12 +23,12 @@ const SideNav = ({ setMargin }) => {
         <Menu.Item key="1">
           <UserOutlined />
           <span className="nav-text">nav 1</span>
-          <Link to="/dashboard/test1" />
+          <Link to="/test1" />
         </Menu.Item>
         <Menu.Item key="2">
           <VideoCameraOutlined />
           <span className="nav-text">nav 2</span>
-          <Link to="/dashboard/test2" />
+          <Link to="/test2" />
         </Menu.Item>
         <Menu.Item key="3">
           <UploadOutlined />

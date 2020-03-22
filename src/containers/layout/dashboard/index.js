@@ -7,6 +7,7 @@ import SideNav from "../../../components/common/sideNav";
 import Header from "../../../components/common/header";
 import Footer from "../../../components/common/footer";
 import DashboardRoutes from "../../routes/dashboard";
+import Cookies from "js-cookie";
 
 const { Content } = Layout;
 
@@ -28,7 +29,10 @@ class DashboardLayout extends Component {
         <Layout>
           <SideNav setMargin={setMargin} />
           <Layout>
-            <Header responsiveMargin={this.state.responsiveMargin} />
+            <Header
+              responsiveMargin={this.state.responsiveMargin}
+              signOut={this.props.signOut}
+            />
             <Content
               style={{
                 margin: "65px 0px 0",
