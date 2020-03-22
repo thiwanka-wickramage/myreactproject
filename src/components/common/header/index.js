@@ -13,10 +13,10 @@ const content = (
 const menu = (
   <Menu style={{ marginTop: "20px", borderTop: "2px solid #1890ff" }}>
     <Menu.Item key="0">
-      <a href="http://www.alipay.com/">1st menu item</a>
+      <a href="#">1st menu item</a>
     </Menu.Item>
     <Menu.Item key="1">
-      <a href="http://www.taobao.com/">2nd menu item</a>
+      <a href="#">2nd menu item</a>
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3">3rd menu item</Menu.Item>
