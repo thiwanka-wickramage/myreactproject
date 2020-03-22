@@ -1,0 +1,42 @@
+body {
+    background-color: #fafafa;
+}
+.main-box {
+    position: relative;
+    top: 100px;
+    width: 800px;
+    border-radius: 4px;
+    margin: 0 auto;
+    height: 410px;
+    border: 1px solid #ececec;
+    box-shadow: 0 0 100px -50px #141414;
+}
+
+.left-intro {
+    float: left;
+    width: 35%;
+    height: inherit;
+    background-color: #060606;
+    color: #a3a3a3;
+    padding: 110px 49px 20px 20px;
+}
+
+.left-intro h1{
+    color: #dfdcde;
+}
+
+.right-form {
+    float: left;
+    padding: 71px 100px 71px 100px;
+    background-color: white;
+    width: 65%;
+}
+.login-form .login-form {
+    max-width: 300px;
+}
+.login-form .login-form-forgot {
+    float: right;
+}
+.login-form .login-form-button {
+    width: 100%;
+}
