@@ -52,7 +52,7 @@ class LayoutRoutes extends Component {
             return this.state.isLogged !== true ? (
               <Component {...customProps} />
             ) : (
-              <Redirect to={"/test1"} />
+              <Redirect to={"/dashboard"} />
             );
           }}
         />

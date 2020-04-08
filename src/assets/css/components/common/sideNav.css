@@ -1,0 +1,19 @@
+.logo {
+    height: 60px;
+    width: 160px;
+    border-bottom: 2px solid #003365;
+}
+
+.logo h1 {
+    font-size: 35px;
+    padding-left: 25px;
+    color: white;
+}
+
+.logo span {
+    position: relative;
+    top: -51px;
+    left: 90px;
+    font-size: 16px;
+    color: #f1f1f1;
+}

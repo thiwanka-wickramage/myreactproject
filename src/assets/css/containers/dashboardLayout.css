@@ -1,0 +1,15 @@
+.site-layout-sub-header-background {
+    padding-left: 24px;
+    margin-left: 200px;
+    position: fixed;
+    height: 64px;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.site-layout-background {
+    background: #fff;
+    padding: 24px;
+    minHeight: 300px;
+}
+

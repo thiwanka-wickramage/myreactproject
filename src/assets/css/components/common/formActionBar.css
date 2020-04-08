@@ -1,0 +1,18 @@
+.action-bar {
+    background-color: #f0f2f5;
+    height: 55px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.action-bar button {
+    margin-right: 5px;
+}
+
+.action-bar .left {
+    float: left;
+}
+
+.action-bar .right {
+    float: right;
+}
