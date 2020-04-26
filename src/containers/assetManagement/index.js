@@ -92,7 +92,7 @@ class AssetManagement extends Component {
     return (
       <div>
         <ActionBar />
-        {console.log("users mappppp>>>>>>>>>>>> ", this.props.getAssets_data)}
+        {console.log("users map -- -->>>>>>>>>>>> ", this.props.getAssets_data)}
         <Table dataSource={data} columns={columns} />;
       </div>
     );

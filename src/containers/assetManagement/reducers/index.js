@@ -3,7 +3,7 @@ const assetsReducer = (state = {}, action) => {
     case "GET_ASSETS":
       return { ...state };
     case "GET_ASSETS_SUCCESS":
-      return { ...state, getAssets_data: action.json };
+      return { ...state, getAssets_data: action.result };
     default:
       return state;
   }

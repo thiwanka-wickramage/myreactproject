@@ -1,13 +1,14 @@
-import { put, takeLatest, all } from "redux-saga/effects";
+import { put, takeLatest, call, all } from "redux-saga/effects";
+import apiHandler from "../../../middlewares/apiHandler";
+import { getAssetsSuccessAction } from "../actions";
+import { GET_ASSETS } from "../constants";
 
 function* getAssets() {
-  const json = yield fetch(
-    `https://jsonplaceholder.typicode.com/users`
-  ).then((response) => response.json());
-  yield put({ type: "GET_ASSETS_SUCCESS", json: json });
+  const result = yield call(apiHandler.getAssets);
+  yield put(getAssetsSuccessAction(result.data));
 }
 function* actionWatcher() {
-  yield takeLatest("GET_ASSETS", getAssets);
+  yield takeLatest(GET_ASSETS, getAssets);
 }
 export default function* assetsSagas() {
   yield all([actionWatcher()]);
