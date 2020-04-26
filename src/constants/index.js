@@ -1,3 +1,4 @@
-const menu = require("../constants/menuConstants");
+import componentRoutes from "./componentRoutes";
+import sideNavBarMenuItems from "./sideNavBarMenuItems";
 
-module.exports = { menu };
+export { sideNavBarMenuItems, componentRoutes };

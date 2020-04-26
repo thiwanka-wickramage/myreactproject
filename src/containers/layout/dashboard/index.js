@@ -25,6 +25,8 @@ class DashboardLayout extends Component {
       this.setState({ responsiveMargin: collapsed ? 0 : 200 });
     };
 
+    /*jsjs*/
+
     return (
       <Router>
         <Layout>
@@ -41,7 +43,6 @@ class DashboardLayout extends Component {
               }}
             >
               <div className="site-layout-background">
-                <NavigationInfoBar />
                 <DashboardRoutes />
               </div>
             </Content>

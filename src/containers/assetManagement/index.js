@@ -1,7 +1,21 @@
 import React, { Component } from "react";
 import { Table, Tag } from "antd";
+import { createStructuredSelector } from "reselect";
+import { connect } from "react-redux";
+import { getAssetsAction } from "./actions";
+import { getAssetsSelector } from "./selectors";
+
 import ActionBar from "../../components/common/actionBar";
+
 class AssetManagement extends Component {
+  componentDidMount() {
+    this.getAssets();
+  }
+
+  getAssets() {
+    this.props.getAssets();
+  }
+
   render() {
     const columns = [
       {
@@ -78,10 +92,18 @@ class AssetManagement extends Component {
     return (
       <div>
         <ActionBar />
+        {console.log("users mappppp>>>>>>>>>>>> ", this.props.getAssets_data)}
         <Table dataSource={data} columns={columns} />;
       </div>
     );
   }
 }
+const mapStateToProps = createStructuredSelector({
+  getAssets_data: getAssetsSelector(),
+});
 
-export default AssetManagement;
+const mapDispatchToProps = (dispatch) => ({
+  getAssets: () => dispatch(getAssetsAction()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AssetManagement);

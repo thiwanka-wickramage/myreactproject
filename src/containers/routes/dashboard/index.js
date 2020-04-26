@@ -1,7 +1,10 @@
 import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, browserHistory } from "react-router-dom";
+
+import { componentRoutes } from "../../../constants";
 import AssetManagement from "../../../containers/assetManagement";
 import AMCreateForm from "../../../containers/assetManagement/form/CreateForm";
+import NavigationInfoBar from "../../../components/common/navigationInfoBar";
 
 const PageNotFound = () => (
   <div
@@ -18,11 +21,13 @@ const PageNotFound = () => (
     <h1>Page Not Found</h1>
   </div>
 );
-const Comp1 = () => (
-  <div>
-    <h1>Hi Test 1 Component</h1>
-  </div>
-);
+const Comp1 = (props) => {
+  return (
+    <div>
+      <h1>Hi Test 1 Component {props.title} </h1>
+    </div>
+  );
+};
 
 const Comp2 = () => (
   <div>
@@ -32,21 +37,47 @@ const Comp2 = () => (
 
 const Comp3 = () => (
   <div>
-    <h1>create new</h1>
+    <h1>create ffffffffffffffff</h1>
   </div>
 );
+
+const componentMap = { Comp1, AssetManagement, AMCreateForm, Comp2 };
+
+const generateRoute = (item, index) => {
+  const InfoComp = NavigationInfoBar;
+  const DynamicComp = componentMap[item.component];
+  return (
+    <Route
+      key={index}
+      exact
+      path={item.path}
+      render={(props) => (
+        <>
+          <InfoComp {...props} title={item.title} /> <DynamicComp {...props} />
+        </>
+      )}
+    />
+  );
+};
 
 const DashboardRoutes = () => (
   <Switch>
     <Route exact path="/">
       <Redirect to="/dashboard" />
     </Route>
-    <Route exact path="/dashboard" component={Comp1} />
 
-    <Route exact path="/asset-management" component={AssetManagement} />
-    <Route exact path="/asset-management/create" component={AMCreateForm} />
+    {componentRoutes.map((item, index) => {
+      let tempMap = [generateRoute(item, index)];
+      if (item.subs) {
+        item.subs.map((sub, index) => {
+          const _sub = Object.assign({}, sub);
+          _sub.path = `${item.path}${sub.path}`;
+          tempMap.push(generateRoute(_sub, index));
+        });
+      }
+      return tempMap;
+    })}
 
-    <Route exact path="/md/master-data" component={Comp2} />
     <Route path="*" component={PageNotFound} />
   </Switch>
 );
