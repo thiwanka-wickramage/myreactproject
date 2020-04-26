@@ -21,7 +21,7 @@ const Header = ({ responsiveMargin, signOut }) => {
         <a href="#">2nd menu item</a>
       </Menu.Item>
       <Menu.Divider />
-      <Menu.Item key="3" onClick={e => signOut(e)}>
+      <Menu.Item key="3" onClick={(e) => signOut(e)}>
         Sign Out
       </Menu.Item>
     </Menu>
@@ -48,7 +48,7 @@ const Header = ({ responsiveMargin, signOut }) => {
         <Dropdown overlay={menu} trigger={["click"]} placement={"bottomRight"}>
           <a
             className="ant-dropdown-link"
-            onClick={e => e.preventDefault()}
+            onClick={(e) => e.preventDefault()}
             style={{ paddingLeft: "22px" }}
           >
             <Avatar icon={<UserOutlined />} /> martin king <DownOutlined />
