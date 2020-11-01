@@ -14,7 +14,12 @@ const FormActionBar = (props) => {
     <div className={"action-bar"}>
       <div className={"left"}>
         <Link to={"/asset-management/create"}>
-          <Button type="primary" icon={<SaveOutlined />} size={"default"}>
+          <Button
+            type="primary"
+            icon={<SaveOutlined />}
+            size={"default"}
+            onClick={props.handleSubmit}
+          >
             Save
           </Button>
         </Link>

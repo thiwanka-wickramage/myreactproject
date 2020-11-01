@@ -10,6 +10,17 @@ const apiHandler = {
       headers: "",
     });
   },
+  doLogin: data => {
+    const { payload } = data;
+    console.log('axio')
+    return axios.post(
+        `https://reqres.in/api/login`,
+        {
+          ...payload
+        },
+        { skipAuthRefresh: true }
+    );
+  },
 };
 
 export default apiHandler;

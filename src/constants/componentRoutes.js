@@ -11,7 +11,7 @@ const componentRoutes = [
     subs: [
       {
         path: "/create",
-        component: "AMCreateForm",
+        component: "CreateAsset",
         title: "Create Asset",
       },
     ],

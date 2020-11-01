@@ -3,7 +3,7 @@ import { Route, Switch, Redirect, browserHistory } from "react-router-dom";
 
 import { componentRoutes } from "../../../constants";
 import AssetManagement from "../../../containers/assetManagement";
-import AMCreateForm from "../../../containers/assetManagement/form/CreateForm";
+import CreateAsset from "../../../containers/assetManagement/createAsset";
 import NavigationInfoBar from "../../../components/common/navigationInfoBar";
 
 const PageNotFound = () => (
@@ -41,7 +41,7 @@ const Comp3 = () => (
   </div>
 );
 
-const componentMap = { Comp1, AssetManagement, AMCreateForm, Comp2 };
+const componentMap = { Comp1, AssetManagement, CreateAsset, Comp2 };
 
 const generateRoute = (item, index) => {
   const InfoComp = NavigationInfoBar;
